@@ -1,5 +1,5 @@
 // 🔧 Script de inicialización de la base de datos
-import { connectDB } from './mongodb';
+import { connectDB } from '../lib/mongodb';
 import { SearchQuery } from '../app/models/SearchQuery';
 
 async function initDB() {
