@@ -4,19 +4,9 @@ const nextConfig = {
     images: {
         domains: ['images.unsplash.com'],
     },
-    // 🔒 Configuración de seguridad de API
-    async headers() {
-        return [
-            {
-                source: '/api/:path*',
-                headers: [
-                    { key: 'Access-Control-Allow-Credentials', value: 'true' },
-                    { key: 'Access-Control-Allow-Origin', value: '*' },
-                    { key: 'Access-Control-Allow-Methods', value: 'GET, OPTIONS' },
-                    { key: 'Access-Control-Allow-Headers', value: 'Content-Type, Authorization' },
-                ],
-            },
-        ];
+    // �️ Configuración del runtime de Edge
+    experimental: {
+        runtime: 'edge',
     },
     // 🌍 Variables de entorno disponibles en el cliente
     env: {
