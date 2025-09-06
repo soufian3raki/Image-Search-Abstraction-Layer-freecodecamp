@@ -9,8 +9,20 @@ import mongoose from 'mongoose';
 const MONGODB_URI = process.env.MONGODB_URI!;
 
 if (!MONGODB_URI) {
+  console.error('🚫 MONGODB_URI no está definida');
   throw new Error('🚫 Por favor define la variable de entorno MONGODB_URI');
 }
+
+// 🛠️ Opciones de conexión para MongoDB Atlas
+const options = {
+  bufferCommands: true,
+  autoIndex: true,
+  retryWrites: true,
+  retryReads: true,
+  maxPoolSize: 10,
+  serverSelectionTimeoutMS: 5000,
+  socketTimeoutMS: 45000,
+};
 
 /**
  * 🌐 Estado de la conexión
